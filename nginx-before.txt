@@ -6,11 +6,13 @@ sitemap: false
 <!DOCTYPE html>
 {% include header.html %}
 {% include menu.html %}
+{% include title.html %}
 <div class="container">
-    <p>This page contains dumps to allow you to create your <a href='//keyserver.mattrude.com/stats/guides/building-server/'>own pgp keyserver</a>.</p>
+    <p>This page contains dumps to allow you to create your <a href='{{ site.url }}/guides/building-server/'>own pgp keyserver</a>.</p>
     <ul>
-        <li>The below dumps are created by the <a href='//keyserver.mattrude.com/guides/dump-process/'>sks-dump-script.sh</a> script.</li>
+        <li>The below dumps are created by the <a href='{{ site.url }}/guides/dump-process/'>sks-dump-script.sh</a> script.</li>
         <li>Dumps are created at 8:00 UTC (2 am CST), each day of the week.</li>
         <li>All times below are in the UTC time zone.</li>
     </ul>
+    <p>Use the below command to download all the current dump files.</p>
     <pre>wget -crp -e robots=off --level=1 --cut-dirs=3 -nH -A pgp,txt http://keyserver.mattrude.com/dump/current/</pre>

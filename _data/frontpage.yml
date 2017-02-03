@@ -1,3 +1,7 @@
+- name: About
+  slug: about
+  file: about.html
+
 - name: Extracting Keys
   slug: extracting
   file: extracting.html
@@ -6,9 +10,9 @@
   slug: submitting
   file: submitting.html
 
-- name: About
-  slug: about
-  file: about.html
+- name: Guides
+  slug: guides
+  file: guides.html
 
 - name: Contact
   slug: contact
