@@ -3,3 +3,15 @@ layout: default
 ---
 
 {% include welcome.html %}
+
+{% for section in site.data.frontpage %}
+<!-- The {{ section.name }} section -->
+<div class="container offsetanchor" id="{{ section.slug }}">
+  <div class="row">
+    <hr />
+    <h1 class="text-center">{{ section.name }}</h1>
+    {% include {{ section.file }} %}
+  </div>
+</div>
+
+{% endfor %}

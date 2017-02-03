@@ -1,29 +1,16 @@
-<html lang="en" class="">
-<head>
-    <meta charset="utf-8">
-    <title>{% if page.title %}{{ page.title }} - {{ site.title }}{% else %}{{ site.title }}{% endif %}</title>
-    {% if page.description %}<meta name="description" content="{{ page.description }}">{% else %}{% endif %}
-    {% if page.tags %}<meta name="keywords" content="{{ page.tags }}">{% else %}{% endif %}
-    <meta name="viewport" content="width=device-width">
-    <meta name="description" content="{{ site.description }}">
-    <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.url }}">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="shortcut icon" href="{{ "/favicon.ico" | prepend: site.url }}"/>
-    <link rel="stylesheet" href="{{ "/css/main.css" | prepend: site.url }}">
-</head>
-<body>
-    <div id="content">
-    <div id="menu">
-        <a href="{{ site.url }}">Home</a> |
-        <a href="{{ site.url }}/about/">About</a> |
-        <a href="{{ site.url }}/contact/">Contact</a> |
-        <a href="{{ site.url }}/doc/extracting/">Extracting keys</a> |
-        <a href="{{ site.url }}/doc/submitting/">Submitting keys</a> |
-        <a href="{{ site.url }}/doc/faq/">FAQ</a> |
-        <a href="{{ site.url }}/guides/">How-To</a> |
-        <a href="{{ site.url }}/news/">News</a> |
-        <a href="{{ site.url }}/dump/">DB Dumps</a> |
-        <a href="{{ site.url }}/stats/">Statistics</a>
-    </div>
-    <ul><li>Dumps are created at 8 am UTC (2 am CST), each day of the week.</li></ul>
+---
+permalink: /nginx-before.txt
+sitemap: false
+---
+
+<!DOCTYPE html>
+{% include header.html %}
+{% include menu.html %}
+<div class="container">
+    <p>This page contains dumps to allow you to create your <a href='//keyserver.mattrude.com/stats/guides/building-server/'>own pgp keyserver</a>.</p>
+    <ul>
+        <li>The below dumps are created by the <a href='//keyserver.mattrude.com/guides/dump-process/'>sks-dump-script.sh</a> script.</li>
+        <li>Dumps are created at 8:00 UTC (2 am CST), each day of the week.</li>
+        <li>All times below are in the UTC time zone.</li>
+    </ul>
+    <pre>wget -crp -e robots=off --level=1 --cut-dirs=3 -nH -A pgp,txt http://keyserver.mattrude.com/dump/current/</pre>

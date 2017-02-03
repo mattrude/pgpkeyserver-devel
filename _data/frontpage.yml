@@ -1,0 +1,15 @@
+- name: Extracting Keys
+  slug: extracting
+  file: extracting.html
+
+- name: Submitting Keys
+  slug: submitting
+  file: submitting.html
+
+- name: About
+  slug: about
+  file: about.html
+
+- name: Contact
+  slug: contact
+  file: contact.html
