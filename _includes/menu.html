@@ -1,0 +1,25 @@
+    <div id="menu">
+        <a href="{{ site.url }}">Home</a> |
+        <a href="{{ site.url }}/about/">About</a> | 
+        <a href="{{ site.url }}/contact/">Contact</a> | 
+        <a href="{{ site.url }}/doc/extracting/">Extracting keys</a> |
+        <a href="{{ site.url }}/doc/submitting/">Submitting keys</a> |
+        <a href="{{ site.url }}/doc/faq/">FAQ</a> | 
+        <a href="{{ site.url }}/guides/">How-To</a> | 
+        {% for post in site.posts limit: 1 %}
+            <a href="{{ site.url }}/news/">News</a> |
+        {% endfor %}
+        <a href="{{ site.url }}/dump/">DB Dumps</a> | 
+        <a href="{{ site.url }}/stats/">Statistics</a>
+    </div>
+    {% if page.url contains 'guides' %}
+    <div id="menu-sub">
+        <a href="{{ site.url }}/guides/"><strong>Guides:</strong></a>
+        <a href="{{ site.url }}/guides/dns-dane-cert-records/">DANE Certs</a> |
+        <a href="{{ site.url }}/guides/public-key-association/">Public Key Association</a> |
+        <a href="{{ site.url }}/guides/one-time-pad/">OTP</a> |
+        <a href="{{ site.url }}/guides/dump-process/">Keyserver Dump Process</a> |
+        <a href="{{ site.url }}/guides/building-server/">Building a SKS Keyserver</a> | 
+        <a href="{{ site.url }}/guides/build-gnupg2/">Build GnuPG 2.1</a>
+    </div>
+    {% endif %}
