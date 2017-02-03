@@ -1,36 +1,29 @@
-
-<!DOCTYPE html>
 <html lang="en" class="">
 <head>
     <meta charset="utf-8">
-    <title>PGP Public Keyserver</title>
-    
-    
+    <title>{% if page.title %}{{ page.title }} - {{ site.title }}{% else %}{{ site.title }}{% endif %}</title>
+    {% if page.description %}<meta name="description" content="{{ page.description }}">{% else %}{% endif %}
+    {% if page.tags %}<meta name="keywords" content="{{ page.tags }}">{% else %}{% endif %}
     <meta name="viewport" content="width=device-width">
-    <meta name="description" content="">
-    <link rel="canonical" href="//keyserver.mattrude.com/">
-    <link rel="shortcut icon" href="//keyserver.mattrude.com/favicon.ico"/>
-    <link rel="stylesheet" href="//keyserver.mattrude.com/css/main.css">
+    <meta name="description" content="{{ site.description }}">
+    <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.url }}">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="shortcut icon" href="{{ "/favicon.ico" | prepend: site.url }}"/>
+    <link rel="stylesheet" href="{{ "/css/main.css" | prepend: site.url }}">
 </head>
 <body>
     <div id="content">
-
-<div id="header">
-    <h1>PGP Public Keyserver</h1>
-    <h4><small>node: </small>keyserver.mattrude.com</h4>
-</div>
     <div id="menu">
-        <a href="//keyserver.mattrude.com">Home</a> |
-        <a href="//keyserver.mattrude.com/about/">About</a> | 
-        <a href="//keyserver.mattrude.com/contact/">Contact</a> | 
-        <a href="//keyserver.mattrude.com/doc/extracting/">Extracting keys</a> |
-        <a href="//keyserver.mattrude.com/doc/submitting/">Submitting keys</a> |
-        <a href="//keyserver.mattrude.com/doc/faq/">FAQ</a> | 
-        <a href="//keyserver.mattrude.com/guides/">How-To</a> | 
-        
-            <a href="//keyserver.mattrude.com/news/">News</a> |
-        
-        <a href="//keyserver.mattrude.com/dump/">DB Dumps</a> | 
-        <a href="//keyserver.mattrude.com/stats/">Statistics</a>
+        <a href="{{ site.url }}">Home</a> |
+        <a href="{{ site.url }}/about/">About</a> |
+        <a href="{{ site.url }}/contact/">Contact</a> |
+        <a href="{{ site.url }}/doc/extracting/">Extracting keys</a> |
+        <a href="{{ site.url }}/doc/submitting/">Submitting keys</a> |
+        <a href="{{ site.url }}/doc/faq/">FAQ</a> |
+        <a href="{{ site.url }}/guides/">How-To</a> |
+        <a href="{{ site.url }}/news/">News</a> |
+        <a href="{{ site.url }}/dump/">DB Dumps</a> |
+        <a href="{{ site.url }}/stats/">Statistics</a>
     </div>
     <ul><li>Dumps are created at 8 am UTC (2 am CST), each day of the week.</li></ul>
